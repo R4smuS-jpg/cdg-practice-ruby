@@ -22,5 +22,3 @@ def foobar(a, b)
     puts a + b
   end
 end
-
-greeting
