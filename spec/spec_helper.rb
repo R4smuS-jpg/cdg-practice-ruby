@@ -1,1 +1,1 @@
-require_relative '../lib/hw_02/methods.rb'
+require_relative '../lib/hw_01/methods.rb'
