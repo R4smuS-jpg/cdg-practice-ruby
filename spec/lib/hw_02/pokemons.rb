@@ -14,7 +14,6 @@ RSpec.describe 'pokemons_array method' do
 
     allow($stdin).to receive(:gets).and_return("2", pokemon1[:name], pokemon1[:color],
                                                     pokemon2[:name], pokemon2[:color])
-    expect {pokemons_array }.to output(correct_output).to_stdout       
-
+    expect {pokemons_array }.to output(correct_output).to_stdout
   end
 end
