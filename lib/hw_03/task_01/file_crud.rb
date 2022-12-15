@@ -21,7 +21,7 @@ end
 
 def where(name)
   File.foreach(GAMES_PATH).with_index do |game, index|
-    return index if game.include?(name)
+    return index if game.downcase.include?(name.downcase)
   end
 end
 
@@ -46,5 +46,3 @@ def delete(id)
   File.write(GAMES_PATH, File.read(BUFFER_PATH))
   File.delete(BUFFER_PATH) if File.exist?(BUFFER_PATH)
 end
-
-binding.irb
