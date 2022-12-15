@@ -10,13 +10,18 @@ loop do
 
   if files_equal?(USERS_PATH, RESULTS_PATH)
     puts 'Files are equal'
+    results_file.close
     break
   end
 
   print 'Enter your age: '
   age = $stdin.gets.encode('UTF-8').chomp.to_i
 
-  break if age == -1
+  if age == -1
+    puts 'Incorrect age'
+    results_file.close
+    break
+  end
 
   File.foreach(USERS_PATH) do |user_data|
     if user_data.split[2].to_i == age
