@@ -14,9 +14,13 @@ def create(game)
 end
 
 def find(id)
+  indexes = []
+
   File.foreach(GAMES_PATH).with_index do |game, index|
-    return game if index == id
+    indexes << game if index == id
   end
+
+  indexes
 end
 
 def where(name)
